@@ -1,0 +1,40 @@
+/*
+ * design-tokens.css — 디자인 토큰 단일 진실 공급원(SSOT)
+ *
+ * Tailwind v4 CSS-first `@theme`. 이 파일이 유일하게 raw 값을 가질 수 있는 곳이다.
+ * 모든 컴포넌트/스타일은 여기 정의된 토큰만 사용한다 (hook이 강제).
+ *
+ * 값은 중립적인 최소 기본 세트다. 프로젝트 초기화 시 실제 디자인 시스템
+ * (또는 Figma 변수 → token-guardian 동기화)으로 교체한다.
+ */
+
+@theme {
+  /* ---- Color ---- */
+  /* 컬러 토큰은 colors.tokens.css 로 이동 (Figma node 6642-26084 추출). */
+
+  /* ---- Spacing ---- */
+  /* Tailwind v4 기본 스페이싱 스케일(--spacing: 0.25rem = 4px)을 그대로 사용한다.
+     숫자 유틸(p-1=4px, p-2=8px, p-4=16px, gap-6=24px …)이 자동 생성되며 hook 와 정합.
+     레이아웃 고정 폭·간격은 layout.tokens.css(--layout-*) 참조. */
+
+  /* ---- Radius ---- */
+  /* 라디우스 토큰은 effects.tokens.css 로 이동 (Figma node 6642-47599). */
+
+  /* ---- Typography ---- */
+  --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+
+  /* ---- Shadow ---- */
+  /* 그림자 토큰은 effects.tokens.css 로 이동 (Figma node 6642-47599). */
+
+  /* ---- Breakpoint ---- */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+}

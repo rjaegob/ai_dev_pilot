@@ -1,0 +1,33 @@
+/*
+ * layout.tokens.css — 레이아웃 규칙 토큰 (Figma Foundation/03. Layout)
+ *
+ * 출처: Figma "공유_Design Style Guide" node 6642-26836 (PC_1920 레이아웃 스펙).
+ * 이 파일은 *.tokens.css 이므로 check-hardcode hook 의 raw 값 예외 대상이다.
+ *
+ * 구조 영역 폭·간격을 CSS 변수로 등록. 컴포넌트는 var(--layout-*) 로 참조한다.
+ * (레이아웃 고정 영역은 px 고정. 본문은 가변 — 기준폭만 calc 으로 도출.)
+ */
+:root {
+  /* ---- 기준 뷰포트 ---- */
+  --layout-viewport-w: 1920px; /* PC_1920 */
+
+  /* ---- 고정 영역 ---- */
+  --layout-header-h: 70px; /* 상단바 높이 */
+  --layout-lnb-w: 272px; /* 좌측 네비(LNB) 폭, Fixed */
+  --layout-lnb-2depth-w: 200px; /* 2-depth LNB 패널 폭, Figma 273-50101 */
+  --layout-lnb-rail-w: 72px; /* 1-depth LNB 아이콘 레일 폭, Figma 273-36843 */
+  --layout-lnb-max-w: 306px; /* LNB 최대 폭 */
+  --layout-filter-w: 320px; /* 우측 필터 패널, Fixed */
+  --layout-filter-alt-w: 272px; /* 필터 변형 폭 */
+  --layout-step-w: 270px; /* Layer Popup 좌측 Step 패널, Fixed */
+  --layout-modal-lg-w: 1102px; /* Large 모달 폭, Figma 40000001-41787 */
+
+  /* ---- 간격 ---- */
+  --layout-col-gap: 48px; /* 컬럼 간 수평 간격 (LNB↔Contents↔Filter) */
+  --layout-content-inset-y: 40px; /* 본문 상·하 여백 (Header 아래 / 하단) */
+
+  /* ---- 본문 기준폭 (2컬럼: viewport − LNB − gap×2) = 1552px ---- */
+  --layout-content-w: calc(
+    var(--layout-viewport-w) - var(--layout-lnb-w) - var(--layout-col-gap) * 2
+  );
+}
